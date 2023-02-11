@@ -10,6 +10,10 @@ RUN service apache2 restart
 
 RUN apt-get update && \
 apt-get install unzip -y && \
+RUN apt-get update && \
+apt-get install -y \
+         libzip-dev \
+         && docker-php-ext-install zip && \
 apt-get clean all && \
 curl -o /icecoder.zip 'https://downloads.icecoder.net/ICEcoder-8.1.zip' && \
 unzip -q /icecoder.zip -d /tmp/ && \
