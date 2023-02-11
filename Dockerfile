@@ -10,7 +10,7 @@ RUN service apache2 restart
 
 RUN apt-get update && \
 apt-get install unzip -y && \
-RUN apt-get update && \
+apt-get update && \
 apt-get install -y \
          libzip-dev \
          && docker-php-ext-install zip && \
